@@ -1,3 +1,4 @@
+
 :root{
   --bg: #ffffff;
   --surface: #ffffff;
@@ -412,40 +413,82 @@ body{
 }
 
 /* ===== FORM STYLING ===== */
-.contact-form {
+
+/* --- Contact Form Fix (after adding Formspree) --- */
+
+/* Ensure consistent layout */
+#contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 2rem;
-  background: var(--surface);
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  gap: 1rem; /* space between fields */
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.contact-form label span {
-  display: block;
-  font-weight: 500;
-  color: var(--text-dark);
-  margin-bottom: 0.25rem;
+/* Label styling */
+#contact-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: var(--text-color);
 }
 
-.contact-form input,
-.contact-form textarea {
+/* Input and textarea styling */
+#contact-form input,
+#contact-form textarea {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  margin-top: 0.25rem;
+  border: 2px solid var(--border-color, #ccc);
   border-radius: 10px;
-  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color, #fff);
+  color: var(--text-color, #333);
   font-size: 1rem;
   resize: none;
-  outline: none;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--accent-2);
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: var(--accent-color, #6c63ff);
+  box-shadow: 0 0 5px var(--accent-color, #6c63ff);
+  outline: none;
 }
+
+/* Button */
+#contact-form .btn-primary {
+  align-self: flex-start;
+  background-color: var(--accent-color, #6c63ff);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contact-form .btn-primary:hover {
+  background-color: var(--accent-hover, #5a54e0);
+  transform: translateY(-2px);
+}
+
+/* Small note under button */
+#contact-form .form-note {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #777);
+}
+
+#contact-form .form-note a {
+  color: var(--accent-color, #6c63ff);
+  text-decoration: none;
+}
+
+#contact-form .form-note a:hover {
+  text-decoration: underline;
+}
+
 
 .btn-primary {
   background-color: var(--accent-2);
@@ -732,27 +775,272 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ===============================
+  EMERGENCY PHONE-CENTERING FIX
+  Paste this at the VERY END of styles.css
+  Applies only to phones <=600px and forces centering
+  =============================== */
+@media (max-width:600px) {
 
-/* Responsive */
-@media (max-width:1100px){
-  .projects-grid{grid-template-columns:1fr}
-  .blog-grid{grid-template-columns:1fr 1fr}
-  .about-grid{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr}
-  .hero{grid-template-columns:1fr; text-align:left}
-  .profile-float{margin:20px auto 0}
-}
-@media (max-width:640px){
-  .blog-grid{grid-template-columns:1fr}
-  .nav-link{font-size:0.9rem}
-  .hero-badges li{font-size:0.8rem;padding:6px 8px}
-  .profile-float{width:260px;height:260px}
-  .nav-wrap{padding:6px 0}
+  .about-grid {
+    display: flex !important;
+    flex-direction: column !important; /* Stack vertically */
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1.8rem !important;
+    width: 100% !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+  }
+
+  .about-text.card,
+  .about-timeline.card {
+    width: 100% !important;
+    max-width: 480px !important;
+    box-sizing: border-box !important;
+    padding: 1.4rem 1rem !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .about-timeline h2 {
+    margin-bottom: 1rem !important;
+  }
+
+  .timeline {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    text-align: left !important;
+    max-width: 90% !important;
+  }
+
+  .timeline li {
+    margin-bottom: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* ensure page doesn't overflow */
+  html, body { overflow-x: hidden !important; }
+
+  /* give every section comfortable side padding */
+  section,
+  .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  /* navbar layout: logo left, actions right */
+  .nav, .nav-wrap {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.6rem 1.5rem !important;
+  }
+
+  /* show toggles in right place */
+  .nav-actions { display:flex !important; gap:0.6rem !important; align-items:center !important; }
+  .theme-toggle, .nav-toggle { display:inline-flex !important; }
+
+  /* dropdown menu full width */
+  .nav-links {
+    left: 0 !important;
+    right: 0 !important;
+    top: 64px !important;
+    display: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.8rem 0 !important;
+    background: var(--surface) !important;
+  }
+  .nav-links.show { display:flex !important; flex-direction:column !important; }
+
+  /* HERO: force column reverse (image first) and center everything */
+  .hero {
+    display: flex !important;
+    flex-direction: column-reverse !important; /* image first */
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 1.25rem !important;
+    padding-top: 4.5rem !important;
+    padding-bottom: 3.5rem !important;
+    margin-top: 50px;
+  }
+
+  /* ensure hero child wrappers center and don't overflow */
+  .hero > * { width: 100% !important; box-sizing: border-box !important; }
+  .hero-text, .hero-content, .hero-media, .hero-img { margin:0 auto !important; max-width: 650px !important; }
+
+  /* profile photo - center and fixed size */
+  .profile-photo, .hero-img img, .profile-photo img {
+    width: 180px !important;
+    height: 180px !important;
+    display: block !important;
+    margin: 0 auto 0.9rem !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+  }
+
+  /* headings & paragraphs readable and centered */
+  .hero h1, .hero-title { font-size: 1.8rem !important; margin: 0.2rem 0 0.6rem !important; text-align:center !important; }
+  .hero p, .hero-sub, .hero-tagline { font-size: 1rem !important; color: var(--muted) !important; margin: 0 0 0.85rem !important; text-align:center !important; line-height:1.5 !important; }
+
+  /* calls to action stacked and centered */
+  .hero-ctas { display:flex !important; flex-direction:column !important; gap:0.6rem !important; align-items:center !important; width:100% !important; }
+  .hero-ctas a, .hero-ctas button { width: 90% !important; max-width: 360px !important; text-align:center !important; }
+
+  /* badges centered */
+  .hero-badges { display:flex !important; justify-content:center !important; gap:0.5rem !important; flex-wrap:wrap !important; margin-top:0.5rem !important; padding:0 !important; list-style:none !important; }
+  .hero-badges li { margin:0 !important; }
+
+  /* PROJECTS / BLOG: single column, centered cards with proper text alignment */
+  /* ======================================
+   📱 Project Activities (mobile optimized)
+   ====================================== */
+@media (max-width: 600px) {
+
+/* ===== FINAL: ensure project card image + text are inside the same box ===== */
+@media (max-width: 600px) {
+  /* Force card to be a block container (no side-by-side layout) */
+  .project-card {
+    display: block !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
+    padding: 1.4rem 1.2rem !important; /* keep comfortable padding inside the box */
+    box-sizing: border-box !important;
+    background: var(--surface) !important;
+    border-radius: 1rem !important;
+    text-align: center !important;
+  }
+
+  /* Make thumbnail fill the card width (not act like a column) */
+  .proj-thumb,
+  .proj-thumb img,
+  .project-img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    margin: 0 0 0.9rem !important;
+    padding: 0 !important;
+    float: none !important;
+    flex: none !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ensure the body sits under the image and uses the card's padding */
+  .proj-body {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important; /* card already provides padding */
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  /* tighten text so it stays inside the card */
+  .proj-body h3,
+  .project-card h3 {
+    margin: 0.35rem 0 0.6rem !important;
+    font-size: 1.1rem !important;
+  }
+
+  .proj-body p,
+  .project-card p {
+    margin: 0 0 0.8rem !important;
+    padding: 0 !important; /* avoid extra horizontal padding that misaligns */
+    line-height: 1.45 !important;
+    word-break: break-word !important;
+    text-align: center !important;
+  }
+
+  /* Buttons stacked and constrained */
+  .proj-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-top: 0.5rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .proj-actions a,
+  .proj-actions button {
+    width: 100% !important;
+    max-width: 360px !important;
+    text-align: center !important;
+  }
+
+  .projects-grid {
+    display: flex !important;
+    flex-direction: column !important; /* stack cards vertically */
+    align-items: center !important;    /* center each card */
+    justify-content: center !important;
+    gap: 1.4rem !important;            /* space between cards */
+    width: 100% !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .project-card {
+    width: 100% !important;
+    max-width: 480px !important;
+  }
+
 }
 
-/* small accessibility / focus styles */
-a:focus, button:focus, input:focus, textarea:focus{
-  outline:3px solid rgba(179,199,249,0.28);
-  outline-offset:2px;
-  border-radius:8px;
+
 }
+  /* Contact: center container and form */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    padding: 0 0.5rem !important;
+  }
+
+  #contact, .contact-info, .contact-form, form#contact-form {
+    width: 100% !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    padding: 0.8rem 1rem !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  #contact .contact-list, .contact-list { text-align: center !important; margin: 0.5rem 0 0.8rem !important; padding: 0 !important; }
+
+  /* Footer: centered and with breathing room */
+  .footer, .footer-content {
+    width: 100% !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    padding: 2.2rem 1.5rem !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .footer p {
+    margin: 0 auto !important;
+    max-width: 520px !important;
+    text-align: center !important;
+  }
+
+  /* modal too */
+  .modal-content { width: 94% !important; max-width: 520px !important; margin: 0 auto !important; padding: 1.2rem !important; }
+
+  /* small utility: outlines to debug (uncomment if you want to inspect) */
+  /*
+  .hero, .projects-grid, .project-card, .blog-grid, .blog-card, .contact-grid, .footer { outline: 1px dashed rgba(255,0,0,0.12) !important; }
+  */
+}
+
