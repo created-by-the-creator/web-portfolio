@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Venice-Anne-Website-Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Theme color for mobile browsers -->
+  <meta name="theme-color" content="#E5D9F2">
+</head>
+<body>
+  <!-- Sticky Navbar -->
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="logo" href="#home">Venice</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#trainings" class="nav-link" >Certificates</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-ghost" aria-pressed="false" title="Toggle dark mode">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME / HERO -->
+    <section id="home" class="hero container">
+      <div class="hero-content">
+        <h1 class="hero-title">Hi, I’m <span class="name">Venice Anne</span></h1>
+
+        <p class="hero-sub">
+          <span id="typed">Computer Science Student at Batangas State University</span>
+        </p>
+
+        <p class="hero-tagline">I love exploring how things work— from solving problems with code to expressing ideas through design and writing.</p>
+
+        <div class="hero-ctas">
+          <a class="btn-primary" href="#projects">View Projects</a>
+          <a class="btn-outline" href="#contact">Contact Me</a>
+        </div>
+
+        <ul class="hero-badges">
+          <li>C++</li>
+          <li>C</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+      </div>
+
+      <div class="hero-media">
+          <div class="profile-photo">
+          <img src="public/1.jpg" alt="Venice Anne Manacop profile photo">
+          </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container about">
+      <div class="section-header">
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text card">
+        <div class="title"><strong>Currently Learning 💻</strong></div>
+
+        <div class="learning-container">
+          <p>💡 C and C++ programming language</p>
+          <p>🌐 Computational Thinking</p>
+          <p>🧠 Data Variable and Operators</p>
+          <p>📘 Control Structures</p>
+          <p>💻 Functions and Arrays Data Grouping in C++</p>
+          <p>🧩 Structured Data</p>
+          <p>🎨 Combining creativity and code</p>
+          <p>🪄 Designing clean and minimal web interfaces</p>
+          <p>⚙️ Writing efficient and readable code</p>
+          <p>🌱 Improving problem-solving skills</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <blockquote class="quote">“Learning to code, learning to grow. 🌸”</blockquote>
+      </div>
+        <div class="about-timeline card">
+          <h2>My Growth</h2>
+          <ol class="timeline">
+            <li>
+              <time>2025</time>
+              <div><strong>First C++ program</strong><p>Wrote a basic information system — little coding but addictive.</p></div>
+            </li>
+            <li>
+              <time>2025</time>
+              <div><strong>First Web App</strong><p>Built a simple website portfolio using the help of ChatGPT.</p></div>
+            </li>
+            <li>
+              <time>2025</time>
+              <div><strong>C++ Grade Calculator</strong><p>Improved logic, handled simple validations.</p></div>
+            </li>
+            <li>
+              <time>2025</time>
+              <div><strong>Ongoing</strong><p>Exploring functions, improving logical skills, and writing reflections.</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+<section id="projects" class="section container projects">
+  <div class="section-header">
+    <h2>Project Activity</h2>
+    <p>Academic and creative project activities that show steady growth and craftsmanship.</p>
+  </div>
+
+  <div class="projects-grid">
+    <!-- Project Card 1 -->
+    <article class="project-card card">
+      <div class="proj-thumb" aria-hidden="true">
+        <img src="/public/grade.png" alt="Voting System preview" class="project-img">
+        <rect width="100%" height="100%" rx="12" fill="#f7f7fb"></rect>
+        <text x="20" y="38" font-size="20" fill="#6b6f82">Basic Information System</text>
+      </div>
+      <div class="proj-body">
+        <h3>Basic Information System</h3>
+        <p class="muted">A student record system used for registration — C++ Program</p>
+        <p class="tech">C++ Programming Language</p>
+
+        <div class="proj-actions">
+          <a class="btn-sm" href="https://github.com/created-by-the-creator/project-activities/blob/main/grade.cpp" target="_blank" rel="noopener">View Code</a>
+          <button class="btn-sm btn-ghost" data-proj="info" aria-expanded="false">Learn More</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 2 -->
+    <article class="project-card card">
+      <div class="proj-thumb" aria-hidden="true">
+        <img src="public/To-DoList.png" alt="To-Do List preview" class="project-img">
+        <svg viewBox="0 0 400 200" class="proj-svg">
+          <rect width="100%" height="100%" rx="12" fill="#f7fbff"></rect>
+          <text x="20" y="38" font-size="20" fill="#6b6f82">C++ Grade Calculator</text>
+        </svg>
+      </div>
+      <div class="proj-body">
+        <h3>Simple To-Do List</h3>
+        <p class="muted">A program that makes you list things that you want to do.</p>
+        <p class="tech">C++ Programming Language</p>
+        <div class="proj-actions">
+          <a class="btn-sm" href="https://github.com/created-by-the-creator/project-activities/blob/main/toDoList.cpp" target="_blank" rel="noopener">View Code</a>
+          <button class="btn-sm btn-ghost" data-proj="grade" aria-expanded="false">Learn More</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 3 -->
+    <article class="project-card card">
+      <div class="proj-thumb" aria-hidden="true">
+        <img src="public/distance.png" alt="Distance Conversion preview" class="project-img">
+        <svg viewBox="0 0 400 200" class="proj-svg">
+          <rect width="100%" height="100%" rx="12" fill="#f8f9fd"></rect>
+          <text x="20" y="38" font-size="20" fill="#6b6f82">Distance Conversion</text>
+        </svg>
+      </div>
+      <div class="proj-body">
+        <h3>Distance Conversion</h3>
+        <p class="muted">It lets you convert miles into kilometer distance.</p>
+        <p class="tech">C++ Programming Language</p>
+        <div class="proj-actions">
+          <a class="btn-sm" href="https://github.com/created-by-the-creator/project-activities/blob/main/miles-km.cpp" target="_blank" rel="noopener">View Code</a>
+          <button class="btn-sm btn-ghost" data-proj="distance" aria-expanded="false">Learn More</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 4 -->
+    <article class="project-card card">
+      <div class="proj-thumb" aria-hidden="true">
+        <img src="public/wish.png" alt="Make A Wish Genie preview" class="project-img">
+        <svg viewBox="0 0 400 200" class="proj-svg">
+          <rect width="100%" height="100%" rx="12" fill="#fdf7fb"></rect>
+          <text x="20" y="38" font-size="20" fill="#6b6f82">Make A Wish Genie</text>
+        </svg>
+      </div>
+      <div class="proj-body">
+        <h3>Make A Wish Genie</h3>
+        <p class="muted">A short, funny activity that lets you have 3 chances to wish.</p>
+        <p class="tech">C++ Programming Language</p>
+        <div class="proj-actions">
+          <a class="btn-sm" href="https://github.com/created-by-the-creator/project-activities/blob/main/miles-km.cpp" target="_blank" rel="noopener">View Code</a>
+          <button class="btn-sm btn-ghost" data-proj="wish" aria-expanded="false">Learn More</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+    <!-- BLOG -->
+<section id="blog" class="section container blog">
+  <div class="section-header">
+    <h2>Blog / Reflections</h2>
+    <p>Essays, poems, and reflections on coding and life.</p>
+  </div>
+
+  <!-- 🔥 This wrapper is what makes the layout 3 columns -->
+  <div class="blog-grid">
+
+    <article class="blog-card card">
+      <div class="blog-meta">Coding · Reflection</div>
+      <h4>My First Experience to C Language</h4>
+      <p class="muted">A short reflection on my first experience in my first programming language.</p>
+      <a class="read-more" href="#" data-blog="c">Read More →</a>
+    </article>
+
+    <article class="blog-card card">
+      <div class="blog-meta">Coding · Reflection</div>
+      <h4>My Experience to C++ Language</h4>
+      <p class="muted">A short reflection of my current journey to C++ Programming Language.</p>
+      <a class="read-more" href="#" data-blog="cpp">Read More →</a>
+    </article>
+
+    <article class="blog-card card">
+      <div class="blog-meta">Philosophy · Creativity</div>
+      <h4>Understanding my Self</h4>
+      <p class="muted">How do I really view myself? Do I really know myself? What is my Personality?</p>
+      <a class="read-more" href="#" data-blog="self">Read More →</a>
+    </article>
+
+  </div> <!-- end blog-grid -->
+</section>
+
+<!-- TRAININGS & SEMINARS -->
+<section id="trainings" class="section container trainings">
+  <div class="section-header">
+    <h2>Trainings & Seminars</h2>
+    <p>Programs, webinars, and workshops I attended to enhance my technical and creative skills.</p>
+  </div>
+
+  <div class="trainings-grid">
+
+    <!-- Seminar 1 -->
+    <article class="training-card card">
+      <div class="training-thumb">
+        <img src="public/certificate1.png" alt="Certificate Preview" class="certificate-img">
+      </div>
+      <div class="training-body">
+        <h3>excelCICSior: Sparking Glorious Evolutions</h3>
+        <p class="muted">Hosted by CICS-SC Alangilan Campus</p>
+        <p>Batangas State University Alangilan Campus, CICS General Orientation.</p>
+        <a href="#cert1" class="btn-cert">View Certificate</a>
+      </div>
+    </article>
+    <div id="cert1" class="lightbox">
+      <a href="#trainings" class="close">&times;</a>
+      <img src="public/certificate1.png" alt="Certificate Full View">
+    </div>
+
+    <!-- Seminar 2 -->
+    <article class="training-card card">
+      <div class="training-thumb">
+        <img src="public/certificate2.jpg" alt="Certificate Preview" class="certificate-img">
+      </div>
+      <div class="training-body">
+        <h3>LearnChatGPT Information Session</h3>
+        <p class="muted">Hosted by DICT South Cotabato</p>
+        <p>It provides understanding on CHATGPT's capabilities and limitations.</p>
+        <a href="#cert2" class="btn-cert">View Certificate</a>
+      </div>
+    </article>
+    <div id="cert2" class="lightbox">
+      <a href="#trainings" class="close">&times;</a>
+      <img src="public/certificate2.jpg" alt="Certificate Full View">
+    </div>
+
+    <!-- Seminar 3 -->
+    <article class="training-card card">
+      <div class="training-thumb">
+        <img src="public/certificate3.jpg" alt="Certificate Preview" class="certificate-img">
+      </div>
+      <div class="training-body">
+        <h3>Introduction to Cybersecurity Awareness</h3>
+        <p class="muted">Hosted by HP LIFE online course</p>
+        <p>It provides common cybersecurity threats and discovered basic ways to keep online data and information more secure.</p>
+        <a href="#cert3" class="btn-cert">View Certificate</a>
+      </div>
+    </article>
+    <div id="cert3" class="lightbox">
+      <a href="#trainings" class="close">&times;</a>
+      <img src="public/certificate3.jpg" alt="Certificate Full View">
+    </div>
+
+    <!-- Seminar 4 -->
+    <article class="training-card card">
+      <div class="training-thumb">
+        <img src="public/certificate4.jpg" alt="Certificate Preview" class="certificate-img">
+      </div>
+      <div class="training-body">
+        <h3>R4Y Employability Workshop Series 2 Session 1</h3>
+        <p class="muted">Hosted by RISE for Youth Team</p>
+        <p>It is designed to equip and inspire young Filipinos through capacity-building, knowledge sharing, and skill-development—fueling their journey toward employability and meaningful impact.</p>
+        <a href="#cert4" class="btn-cert">View Certificate</a>
+      </div>
+    </article>
+    <div id="cert4" class="lightbox">
+      <a href="#trainings" class="close">&times;</a>
+      <img src="public/certificate4.jpg" alt="Certificate Full View">
+    </div>
+
+    <!-- Seminar 5 -->
+    <article class="training-card card">
+      <div class="training-thumb">
+        <img src="public/certificate5.jpg" alt="Certificate Preview" class="certificate-img">
+      </div>
+      <div class="training-body">
+        <h3>R4Y Employability Workshop Series 3.3</h3>
+        <p class="muted">Hosted by RISE for Youth Team</p>
+        <p>It is designed to equip and inspire young Filipinos through capacity-building, knowledge sharing, and skill-development—fueling their journey toward employability and meaningful impact.</p>
+        <a href="#cert5" class="btn-cert">View Certificate</a>
+      </div>
+    </article>
+    <div id="cert5" class="lightbox">
+      <a href="#trainings" class="close">&times;</a>
+      <img src="public/certificate5.jpg" alt="Certificate Full View">
+    </div>
+
+  </div>
+</section>
+
+    <!-- CONTACT -->
+<section id="contact" class="section container contact">
+  <div class="section-header">
+    <h2>Contact Me</h2>
+    <p>Want to collaborate, ask about a project, or just say hi? Send me a message below.</p>
+  </div>
+
+  <div class="contact-grid">
+    <!-- Contact Info -->
+    <div class="contact-info card">
+      <h3>Let’s Connect 💬</h3>
+      <p>I’m open to collaborations, academic discussions, and creative opportunities. Feel free to reach out!</p>
+      <ul class="contact-list">
+        <li><strong>Email:</strong> <a href="mailto:veniceannemanacop0@gmail.com">veniceannemanacop0@gmail.com</a></li>
+        <li><strong>Location:</strong> Batangas City, Philippines</li>
+      </ul>
+
+      <div class="contact-socials">
+        <a href="https://github.com/created-by-the-creator" title="GitHub">🐱‍💻</a>
+        <a href="https://www.linkedin.com/in/venice-anne-manacop-0263871b5/" title="LinkedIn">💼</a>
+        <a href="https://www.facebook.com/veniceanne.manacop.75" title="Facebook">🌐</a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form id="contactForm" class="contact-form card" action="https://formspree.io/f/xovkrnoe" method="POST">
+      <label>
+        <span>Name</span>
+        <input type="text" name="name" placeholder="Your name" required>
+      </label>
+
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" placeholder="you@example.com" required>
+      </label>
+
+      <label>
+        <span>Message</span>
+        <textarea name="message" rows="6" placeholder="Write your message..." required></textarea>
+      </label>
+
+      <button type="submit" class="btn-primary">Send Message</button>
+      <p class="form-note">Or email me directly ✉️ <a href="mailto:veniceannemanacop0@gmail.com">veniceannemanacop0@gmail.com</a></p>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-content">
+    <p>Made by Venice ❤️</p>
+  </div>
+</footer>
+
+
+  </main>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="back-top" aria-label="Back to top">↑</button>
+
+  <!-- Project modal (simple) -->
+  <div id="projModal" class="modal" aria-hidden="true">
+    <div class="modal-content card">
+      <button class="modal-close" aria-label="Close project details">✕</button>
+      <div id="projModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Blog Modal -->
+  <div id="blogModal" class="modal" aria-hidden="true">
+    <div class="modal-content card">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div id="blogModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+</body>
+</html>
