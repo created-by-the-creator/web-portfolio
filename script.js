@@ -227,37 +227,26 @@ document.addEventListener('keydown', (e) => {
   }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const contactForm = document.getElementById('contactForm');
+  const form = document.getElementById("contact-form");
 
-  contactForm?.addEventListener('submit', async (e) => {
-    e.preventDefault(); // prevent default submit
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
 
-    const formData = new FormData(contactForm);
-
-    try {
-      const response = await fetch(contactForm.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        alert('Message sent successfully!');
-        contactForm.reset();
-      } else {
-        const data = await response.json();
-        if (data.errors) {
-          alert(data.errors.map(err => err.message).join("\n"));
-        } else {
-          alert('Oops! Something went wrong.');
-        }
-      }
-    } catch (error) {
-      alert('Error sending message: ' + error.message);
-    }
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { Accept: "application/json" },
   });
+
+  if (response.ok) {
+    alert("✅ Message sent successfully!");
+    form.reset();
+  } else {
+    alert("❌ Something went wrong. Please try again.");
+  }
+});
+
 });
 
 

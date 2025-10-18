@@ -414,28 +414,36 @@ body{
 
 /* ===== FORM STYLING ===== */
 
-/* --- Contact Form Fix (after adding Formspree) --- */
+/* ==========================
+   CONTACT FORM (Formspree) FIX
+   ========================== */
 
-/* Ensure consistent layout */
-#contact-form {
+/* Container */
+#contact-form,
+form[action*="formspree"] {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* space between fields */
+  gap: 1rem;
   max-width: 600px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Label styling */
-#contact-form label {
+/* Labels */
+#contact-form label,
+form[action*="formspree"] label {
   display: flex;
   flex-direction: column;
   font-size: 1rem;
-  color: var(--text-color);
+  color: var(--text-color, #333);
 }
 
-/* Input and textarea styling */
+/* Inputs and Textareas */
 #contact-form input,
-#contact-form textarea {
+#contact-form textarea,
+form[action*="formspree"] input,
+form[action*="formspree"] textarea {
   width: 100%;
   padding: 0.75rem 1rem;
   margin-top: 0.25rem;
@@ -449,15 +457,18 @@ body{
 }
 
 #contact-form input:focus,
-#contact-form textarea:focus {
+#contact-form textarea:focus,
+form[action*="formspree"] input:focus,
+form[action*="formspree"] textarea:focus {
   border-color: var(--accent-color, #6c63ff);
   box-shadow: 0 0 5px var(--accent-color, #6c63ff);
   outline: none;
 }
 
-/* Button */
-#contact-form .btn-primary {
-  align-self: flex-start;
+/* Buttons */
+#contact-form .btn-primary,
+form[action*="formspree"] .btn-primary {
+  align-self: center;
   background-color: var(--accent-color, #6c63ff);
   color: #fff;
   padding: 0.75rem 1.5rem;
@@ -468,50 +479,54 @@ body{
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#contact-form .btn-primary:hover {
+#contact-form .btn-primary:hover,
+form[action*="formspree"] .btn-primary:hover {
   background-color: var(--accent-hover, #5a54e0);
   transform: translateY(-2px);
 }
 
-/* Small note under button */
-#contact-form .form-note {
+/* Small notes / helper text */
+#contact-form .form-note,
+form[action*="formspree"] .form-note {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   color: var(--text-secondary, #777);
+  text-align: center;
 }
 
-#contact-form .form-note a {
+#contact-form .form-note a,
+form[action*="formspree"] .form-note a {
   color: var(--accent-color, #6c63ff);
   text-decoration: none;
 }
 
-#contact-form .form-note a:hover {
+#contact-form .form-note a:hover,
+form[action*="formspree"] .form-note a:hover {
   text-decoration: underline;
 }
 
+/* Responsive for phones */
+@media (max-width: 600px) {
+  #contact-form,
+  form[action*="formspree"] {
+    padding: 0 1rem;
+    gap: 0.9rem;
+  }
 
-.btn-primary {
-  background-color: var(--accent-2);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  #contact-form input,
+  #contact-form textarea,
+  form[action*="formspree"] input,
+  form[action*="formspree"] textarea {
+    font-size: 0.95rem;
+    padding: 0.65rem 0.9rem;
+  }
+
+  #contact-form .btn-primary,
+  form[action*="formspree"] .btn-primary {
+    width: 100%;
+  }
 }
 
-.btn-primary:hover {
-  background-color: var(--accent-1);
-  color: var(--text-dark);
-}
-
-.form-note {
-  font-size: 0.9rem;
-  color: var(--muted);
-  text-align: center;
-  margin-top: 0.5rem;
-}
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -900,23 +915,35 @@ html {
    ====================================== */
 @media (max-width: 600px) {
 
-/* ===== FINAL: ensure project card image + text are inside the same box ===== */
-@media (max-width: 600px) {
-  /* Force card to be a block container (no side-by-side layout) */
+  /* Stack project cards vertically and center them */
+  .projects-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1.4rem !important;
+    width: 100% !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Each card full width, with proper padding */
   .project-card {
     display: block !important;
-    overflow: hidden !important;
     width: 100% !important;
     max-width: 480px !important;
     margin: 0 auto !important;
-    padding: 1.4rem 1.2rem !important; /* keep comfortable padding inside the box */
+    padding: 1.4rem 1.2rem !important;
     box-sizing: border-box !important;
-    background: var(--surface) !important;
     border-radius: 1rem !important;
+    background: var(--surface) !important;
     text-align: center !important;
+    overflow: hidden !important;
   }
 
-  /* Make thumbnail fill the card width (not act like a column) */
+  /* Thumbnail images fit naturally inside card */
   .proj-thumb,
   .proj-thumb img,
   .project-img {
@@ -927,22 +954,19 @@ html {
     object-fit: cover !important;
     margin: 0 0 0.9rem !important;
     padding: 0 !important;
-    float: none !important;
-    flex: none !important;
-    box-sizing: border-box !important;
+    border-radius: 0.8rem !important;
   }
 
-  /* Ensure the body sits under the image and uses the card's padding */
+  /* Text inside card properly aligned and spaced */
   .proj-body {
     display: block !important;
     width: 100% !important;
-    padding: 0 !important; /* card already provides padding */
+    padding: 0 !important;
     margin: 0 !important;
     box-sizing: border-box !important;
     text-align: center !important;
   }
 
-  /* tighten text so it stays inside the card */
   .proj-body h3,
   .project-card h3 {
     margin: 0.35rem 0 0.6rem !important;
@@ -952,13 +976,13 @@ html {
   .proj-body p,
   .project-card p {
     margin: 0 0 0.8rem !important;
-    padding: 0 !important; /* avoid extra horizontal padding that misaligns */
+    padding: 0 0.4rem !important; /* ensure text stays inside the box */
     line-height: 1.45 !important;
     word-break: break-word !important;
     text-align: center !important;
   }
 
-  /* Buttons stacked and constrained */
+  /* Stack buttons vertically inside card */
   .proj-actions {
     display: flex !important;
     flex-direction: column !important;
@@ -977,47 +1001,7 @@ html {
     text-align: center !important;
   }
 
-  .projects-grid {
-    display: flex !important;
-    flex-direction: column !important; /* stack cards vertically */
-    align-items: center !important;    /* center each card */
-    justify-content: center !important;
-    gap: 1.4rem !important;            /* space between cards */
-    width: 100% !important;
-    max-width: 520px !important;
-    margin: 0 auto !important;
-    padding: 0 1rem !important;
-    box-sizing: border-box !important;
-  }
-
-  .project-card {
-    width: 100% !important;
-    max-width: 480px !important;
-  }
-
 }
-
-
-}
-  /* Contact: center container and form */
-  .contact-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-    max-width: 520px !important;
-    margin: 0 auto !important;
-    padding: 0 0.5rem !important;
-  }
-
-  #contact, .contact-info, .contact-form, form#contact-form {
-    width: 100% !important;
-    max-width: 520px !important;
-    margin: 0 auto !important;
-    padding: 0.8rem 1rem !important;
-    box-sizing: border-box !important;
-    text-align: center !important;
-  }
-
-  #contact .contact-list, .contact-list { text-align: center !important; margin: 0.5rem 0 0.8rem !important; padding: 0 !important; }
 
   /* Footer: centered and with breathing room */
   .footer, .footer-content {
